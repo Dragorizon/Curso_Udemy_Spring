@@ -35,14 +35,41 @@
 							<span sec:authentication="name"></span>
 					</a>
 
-						<div class="dropdown-menu" style="min-width: auto; max-width: max-content;">
+						<div class="dropdown-menu"
+							style="min-width: auto; max-width: max-content;">
 							<form th:action="@{/logout}" method="post" id="logoutForm">
-								<button class="dropdown-item" style="font-size: 14px; padding: 5px 6px;" type="submit">Cerrar Sesion</button>
+								<button class="dropdown-item"
+									style="font-size: 14px; padding: 5px 6px;" type="submit">Cerrar
+									Sesion</button>
 
 							</form>
+						</div></li>
+				</ul>
+				<ul class="navbar-nav navbar-right mx-4">
+					<li class="nav-item mx-1"><a th:href="@{/locale(lang=es_ES)}"
+						class="btn btn-outline-success">ES</a></li>
+					<li class="nav-item mx-1"><a th:href="@{/locale(lang=en_EN)}"
+						class="btn btn-outline-success">EN</a></li>
+					<li class="nav-item mx-1"><a th:href="@{/locale(lang=de_DE)}"
+						class="btn btn-outline-success">DE</a></li>
+						
+					<li class="dropdown show nav-item mx-2">
+						<a
+						class="btn btn-outline-primary dropdown-toggle" href="#"
+						role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<span th:text="#{text.locale.languaje}"></span></a>
+						<div class="dropdown-menu" style="min-width: auto; max-width: max-content;">
+							<a th:href="@{/locale(lang=es_ES)}" class="dropdown-item" th:text=#{text.locale.es}>ES</a>	
+						
+							<a th:href="@{/locale(lang=en_EN)}" class="dropdown-item" th:text=#{text.locale.en}>EN</a>	
+							
+							<a th:href="@{/locale(lang=de_DE)}" class="dropdown-item" th:text=#{text.locale.de}>DE</a>	
 						</div>
+							
+						
 					</li>
 				</ul>
+
 			</div>
 		</nav>
 
