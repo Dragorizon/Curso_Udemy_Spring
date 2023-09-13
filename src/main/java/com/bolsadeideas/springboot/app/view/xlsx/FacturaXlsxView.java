@@ -26,9 +26,10 @@ import jakarta.servlet.http.HttpServletResponse;
 @Component("factura/ver.xlsx")
 public class FacturaXlsxView extends AbstractXlsxView{
 	
+	//instancias de la primera forma de agregar multilenguaje
 	@Autowired
 	private MessageSource messageSource;
-	
+	//.
 	@Autowired
 	private LocaleResolver localeResolver;	
 
@@ -36,8 +37,8 @@ public class FacturaXlsxView extends AbstractXlsxView{
 	protected void buildExcelDocument(Map<String, Object> model, Workbook workbook, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		
-		
-		MessageSourceAccessor mensaje = 	getMessageSourceAccessor();
+		//Segunda forma de agregar multilenguaje
+		MessageSourceAccessor mensaje = getMessageSourceAccessor();
 		
 		response.setHeader("Content-Disposition", "attachment; filename=\"factura_view.xlsx\"");
 		Factura factura = (Factura) model.get("factura");
