@@ -18,9 +18,9 @@ public class ClienteControllerApi {
 	@Autowired
 	private IClienteService clienteService;
 	
-	@GetMapping("/clientes/{id}")
-	public Cliente listar(@PathVariable(value = "id") Long id) {
-		return clienteService.findOne(id);
+	@GetMapping("/listar")
+	public String listaasdr() {
+		return "Hola mundi";
 	}
 
 }

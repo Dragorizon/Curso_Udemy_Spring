@@ -97,6 +97,7 @@ public class ClienteController {
 
 	//--------------muestra todos los clientes de la base de datos------------------------------------------
 	
+	@Secured("ROLE_ADMIN")
 	@RequestMapping(value = {"/listar","/"}, method = RequestMethod.GET)
 	public String listar(@RequestParam(name = "page", defaultValue = "0") int page, Model model,
 			Authentication authentication, 

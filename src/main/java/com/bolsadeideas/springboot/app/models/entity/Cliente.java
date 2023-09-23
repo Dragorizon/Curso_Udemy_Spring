@@ -22,6 +22,8 @@ import jakarta.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "clientes")
 public class Cliente implements Serializable {
@@ -47,6 +49,7 @@ public class Cliente implements Serializable {
 	private Date createAt;
 
 	@OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JsonBackReference
 	private List<Factura> facturas;
 
 	private String foto;
